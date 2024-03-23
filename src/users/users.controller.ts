@@ -32,7 +32,7 @@ export class UsersController {
 
   @Get(':id')
   async getUserById(@Param('id') id: string): Promise<User> {
-    return this.usersService.findUserById(+id);
+    return this.usersService.findUserById(id);
   }
 
   @Put(':id') // Define the update user endpoint
@@ -40,11 +40,11 @@ export class UsersController {
     @Param('id') id: string,
     @Body(ValidationPipe) updateUserDto: UpdateUserDto, // Use the DTO for updating user
   ): Promise<User> {
-    return this.usersService.updateUser(+id, updateUserDto); // Call the updateUser method from the service
+    return this.usersService.updateUser(id, updateUserDto); // Call the updateUser method from the service
   }
 
   @Delete(':id') // Define the delete user endpoint
   async deleteUser(@Param('id') id: string): Promise<User> {
-    return this.usersService.deleteUser(+id); // Call the deleteUser method from the service
+    return this.usersService.deleteUser(id); // Call the deleteUser method from the service
   }
 }
