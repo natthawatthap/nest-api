@@ -76,3 +76,5 @@ Nest is [MIT licensed](LICENSE).
 npx prisma init   
 npx prisma generate 
 npx prisma migrate dev --name init
+
+npx @compodoc/compodoc -p tsconfig.json -s
